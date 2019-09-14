@@ -174,7 +174,7 @@ function appendCards(target, data, count = 1, random = false) {
         console.log(`Building card using local data for ${currentLogin}`);
         target.insertAdjacentElement("afterend", buildGitHubProfileCard(currentData));
       } else {
-        console.log("Requets remaining: "+r.headers["x-ratelimit-remaining"]);
+        console.log("Requests remaining: "+r.headers["x-ratelimit-remaining"]);
         console.log(`Building card using fetched data for ${currentLogin}`);
         axios.get('https://api.github.com/users/'+currentLogin).then((p) => {
           target.insertAdjacentElement("afterend", buildGitHubProfileCard(p.data));
